@@ -1,0 +1,72 @@
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.jumbotron {
+    min-height: 100vh;
+}
+
+
+body {
+    background-color: rgb(0, 0, 0);
+    height: calc(100vh - 60px);
+  }
+
+  
+  #contentWrap {
+    display: none;
+  }
+  
+  .chat {
+    height: 35rem;
+    overflow-y: scroll;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+.card{
+  padding: 15px;
+  margin: 15px;
+}
+.block{
+display: flex;
+}
+.btn{
+  margin: 10px;
+  width: auto;
+}
+.cart{
+  text-align: center;
+  color: white;
+}
+.page-item{
+margin-left: 10px;
+}
+.ul.pagination{
+  margin-left: 10px;
+}
+h3{
+  color:white
+}
+.role{
+  color: beige;
+  margin: 10px;
+}
+.logout{
+  margin-left: 10px;
+}
+.session{
+  display: flex;
+  align-items:center;
+  text-align: center;
+}
+.login{
+  color: white;
+}

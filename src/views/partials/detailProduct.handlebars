@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto"><i class="fa-solid fa-store"></i>
+     TIENDA DE ROPA 
+    </a>
+  </nav>
+      <div class="card" style="width: 500px;">
+         {{#each thumbnail}}
+        <img src="{{this}}" class="card-img-top" alt="{{title}}">
+        {{/each}}
+      <div class="card-body">
+      <h5 class="card-title"> {{title}}</h5>
+      <p class="card-text">Descripcion :{{description}}</p>
+      <p class="card-text">Precio: $ {{price}}</p>
+      <p class="card-text">Categoría: {{category}}</p>
+      <p class="card-text">Stock: {{stock}}</p>
+        <p class="card-text">Codigo: {{code}}</p>
+        <p class="card-text">Category: {{category}}</p>
+     </div>
+    </div>
+
+<script src="https://kit.fontawesome.com/48d346ada8.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="/style.css" />

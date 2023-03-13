@@ -1,0 +1,71 @@
+ <nav class="navbar navbar-dark bg-dark">
+  <div>
+      <a class="navbar-brand mx-auto"><i class="fa-solid fa-store"></i>
+     TIENDA DE ROPA 
+    </a>
+  </div>
+    <div class="session">
+      <h3>Bienvenido {{ user.name }}</h3>
+      <div class="role">
+        <p><i class="fa-solid fa-user"></i> {{ user.role }} </p>
+      </div>
+     <div class="open ">
+      <form action="/auth/login" method="GET">
+        <button class="btn btn-success" type="submit">Iniciar sesión</button>
+    </form>
+    </div>
+    <div class="logout">
+      <form action="/auth/logout" method="GET">
+        <button class="btn btn-success" type="submit">Cerrar sesión</button>
+    </form>
+    </div>
+   
+    </div>
+    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
+  </nav>
+
+
+<h1>Productos</h1>
+<form action="/api/products" method="GET">
+  <button class="btn btn-secondary" type="submit" name="sort" value="asc">Ordenar Ascendente</button>
+  <button class="btn btn-secondary" type="submit" name="sort" value="desc">Ordenar Descendente</button>
+</form>
+ <div class="block" >
+{{#if response.payload}}
+		{{#each response.payload}}
+      <div class="card" style="width: 300px;">
+      <img src="{{this.thumbnail}}" class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+      <p class="card-text">{{this.description}}</p>
+      <p>Precio: {{this.price}}</p>
+      <p>Categoría: {{this.category}}</p>
+      <a class="btn btn-primary" href="/api/products/{{this._id}}">Ver detalles</a>
+      <form action="/api/carts/" method="POST">
+			<input type="hidden" name="productId" value="{{this._id}}">
+			<input type="submit" class="btn btn-danger" value="Agregar al carrito">
+			</form>
+     </div>
+    </div>
+		{{/each}}
+	</div>
+    <ul class="pagination">
+    {{#if response.hasPrevPage}}
+    <li class="page-item">
+			<a class="page-link" href="{{response.prevLink}}">Anterior</a>
+      </li>
+		{{/if}}
+    {{#if response.hasNextPage}}
+     <li class="page-item">
+			<a class="page-link" href="{{response.nextLink}}">Siguiente</a>
+      </li>
+		{{/if}}
+	{{else}}
+		<p>No se encontraron productos.</p>
+	{{/if}}
+  </ul>
+
+<script src="https://kit.fontawesome.com/48d346ada8.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="/style.css" />
+
+ 

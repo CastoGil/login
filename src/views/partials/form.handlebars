@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto"><i class="fa-solid fa-store"></i>
+     TIENDA DE ROPA 
+    </a>
+  </nav>
+<div class="container mt-1">
+    <div class="jumbotron">
+        <h1>Ingrese Producto</h1>
+        <br>
+        <form id="noteForm">
+        <!-- Campo titulo del producto -->
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" class="form-control" type="text" name="title" required>
+        </div>
+        <!-- Campo description del producto -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input id="description" class="form-control" type="text" step="0.01" name="description" required>
+        </div>
+        <!-- Campo price del producto -->
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input id="price" class="form-control" type="number" step="0.01" name="price" required>
+        </div>
+        <!-- Campo thumbnail del producto -->
+        <div class="form-group">
+            <label for="thumbnail">Thumbnail</label>
+            <input id="thumbnail" class="form-control" type="text" step="0.01" name="thumbnail" required>
+        </div>
+        <!-- Campo code del producto -->
+        <div class="form-group">
+            <label for="code">Code</label>
+            <input id="code" class="form-control" type="text" step="0.01" name="code" required>
+        </div>
+        <!-- Campo stock del producto -->
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input id="stock" class="form-control" type="number" step="0.01" name="stock" required>
+        </div>
+        <!-- Campo category del producto -->
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input id="category" class="form-control" type="text" step="0.01" name="category" required>
+        </div>
+        <!-- Botón de envío -->
+        <button id='Submit' class="btn btn-success mt-3">Enviar</button>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/client.js"></script>
+         </form>
+    </div>
+   
+</div>
